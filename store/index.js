@@ -5,6 +5,10 @@ const createStore = () => {
       state: function() {
         return {
           schemas: {
+						user: [
+							{text: '名前', value: 'name'},
+							{text: 'メールアドレス', value: 'email' },
+						],
 						task: [
 							{text: '題名', value: 'title'},
 							{text: '本文', value: 'body' },
@@ -12,6 +16,7 @@ const createStore = () => {
 						],
 					},
         	data: {
+						user: [],
 						task: [
 							{title: '掃除', body: '部屋の掃除をする', status: '完了'},
 							{title: '買い物', body: '夕食のおかずを買いに行く'},
@@ -19,11 +24,15 @@ const createStore = () => {
 						],
 					},
 					item: {
+						user: {
+							name: '',
+							email: '',
+						},
 						task: {
 							title: '',
 							body: '',
 							status: '',
-						}
+						},
 					}
       	}
 			},
