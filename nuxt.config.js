@@ -5,6 +5,9 @@ export default {
   /*
   ** Headers of the page
   */
+  router: {
+    base: '/nuxt-lowcode-app/' // github.pagesデプロイに対応するため
+  },
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -14,7 +17,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/nuxt-lowcode-app/favicon.ico' }
     ]
   },
   /*
