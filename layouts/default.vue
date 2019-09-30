@@ -91,31 +91,36 @@
 <script>
 export default {
   data () {
-    let items = [
-      {
-        icon: 'mdi-home',
-        title: 'Home',
-        to: '/'
-      }
-    ]
-    Object.keys(this.$store.state.schemas).forEach(key => {
-      let item = {
-        icon: 'mdi-apps',
-        title: key,
-        to:`/${key}`,
-      }
-      items.push(item)
-    })
-
     return {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: items,
       miniVariant: false,
       right: true,
       rightDrawer: false,
       title: 'Low-Code Prototype'
+    }
+  },
+  computed: {
+    items: {
+      get() {
+        let items = [
+          {
+            icon: 'mdi-home',
+            title: 'Home',
+            to: '/'
+          }
+        ]
+        Object.keys(this.$store.state.schemas).forEach(key => {
+          let item = {
+            icon: 'mdi-apps',
+            title: key,
+            to:`/${key}`,
+          }
+          items.push(item)
+        })
+        return items
+      }
     }
   }
 }
